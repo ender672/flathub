@@ -1,5 +1,13 @@
 [Desktop Entry]
-Name=SQuirreL SQL
-Exec=squirrel-sql
+Version=1.0
 Type=Application
-Icon=net.sourceforge.squirrel_sql
+Name=Squirrel SQL
+GenericName=Database Manager
+GenericName[de]=Datenbankmanager
+Comment=Graphical Java program to manage JDBC databases
+Comment[de]=Programm zum Zugriff auf Datenbanken
+Terminal=false
+StartupNotify=true
+Exec=squirrel-sql
+Icon=squirrel-sql
+Categories=Development;Database;Java;

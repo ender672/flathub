@@ -1,2 +1,18 @@
-#!/bin/sh
-/app/jre/bin/java -cp /app/squirrelsql/squirrel-sql.jar:/app/squirrelsql/lib/*:/app/jdbc-drivers/* -splash:"/app/squirrelsql/icons/splash.jpg" net.sourceforge.squirrel_sql.client.Main --user-settings-dir $XDG_CONFIG_HOME
+#!/bin/bash
+
+# Set this to scale the UI by x2.
+# GDK_SCALE=2
+
+
+SQUIRREL_SQL_HOME="/app/squirrelsql"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/squirrel-sql"
+CLASSPATH="$SQUIRREL_SQL_HOME"/squirrel-sql.jar:"$SQUIRREL_SQL_HOME"/lib/*
+CLASSPATH="$CLASSPATH":/app/jdbc-drivers/*
+# When choosing the GTK Look-and-Feel, don't use GTK3 as backend, as it
+# does not correctly display the greyed out menu items in the menu bar.
+JAVA_GTK="-Djdk.gtk.version=2.2"
+# On some desktop environments, namely KDE, this is not corretly detected.
+# Visibly better scaling when using the GTK Look-and-Feel.
+JAVA_KDE="-Dawt.useSystemAAFontSettings=on"
+
+exec /app/jre/bin/java -cp "$CLASSPATH" $JAVA_GTK $JAVA_KDE -splash:"$SQUIRREL_SQL_HOME"/icons/splash.jpg net.sourceforge.squirrel_sql.client.Main $@ --log-config-file "$SQUIRREL_SQL_HOME"/log4j.properties --squirrel-home "$SQUIRREL_SQL_HOME" --user-settings-dir "$CONFIG_DIR"
