@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>net.sourceforge.squirrel_sql</id>
   <launchable type="desktop-id">net.sourceforge.squirrel_sql.desktop</launchable>
-  <name>SquirreL SQL Client</name>
+  <name>SQuirreL SQL Client</name>
   <summary>SQuirreL SQL Client is a graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc.</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <screenshots>
@@ -43,10 +43,23 @@
       <image>http://www.squirrelsql.org/screenshots/7_graph.png</image>
     </screenshot>
   </screenshots>
+  <kudos>
+    <!--<kudo>HiDpiIcon</kudo>-->
+    <!--<kudo>UserDocs</kudo>-->
+  </kudos>
+  <provides>
+    <binary>squirrel-sql</binary>
+    <binary>squirrelcli</binary>
+  </provides>
   <project_license>LGPL-2.1-or-later</project_license>
-  <url type="homepage">http://www.squirrelsql.org/</url>
+  <url type="homepage">http://www.squirrelsql.org</url>
+  <url type="faq">http://www.squirrelsql.org/index.php?page=screenshots</url>
+  <url type="help">http://www.squirrelsql.org/kulvir/tutorial.html</url>
+  <url type="translate">http://www.squirrelsql.org/index.php?page=translations</url>
+  <url type="donation">https://www.paypal.com/donate?token=5TVlMyFKH7vJBqhkE005QRe3MwDkaWuhWHy9YkezijjlQsc9Pc1uUWXwTxFGSeh0UDUi52lfyE5wT8xp</url>
+  <url type="bugtracker">https://sourceforge.net/p/squirrel-sql/bugs</url>
   <description><p>SQuirreL SQL Client is a graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc.</p></description>
-  <content_rating type="oars-1.0" />
+  <content_rating type="oars-1.1" />
   <releases>
     <release date="2020-04-30" version="4.1.0"/>
   </releases>
